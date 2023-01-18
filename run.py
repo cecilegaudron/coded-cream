@@ -25,13 +25,31 @@ ingredient = SHEET.worksheet('details')
 def container_choice():
     """
     Call the first column with the details and display choices for containers
-    Input the client's choice
     """
     print("What is the container ?")
     container_details = ingredient.col_values(1)[1:] # get the container values
-    print(indcontainer_details)
+    
+    #Assign a number to a cell value
+    container_num = []
+    for i in range(1, 4):
+        container_num.append(i)
 
+    container_convert = dict(zip(container_num, container_details))
+    print(container_convert)
+
+    # convert string to value
 
 container_choice()
 
+
+def container_selection():
+    """
+    Receive the selection of the container
+    Input the client's choice
+    """
+    container_str = input("Enter the selection with a number between 1 and 3: ")
+    # add a value linked with my containers
+    # save this choice in the spreadsheet
+
+container_selection()
 
