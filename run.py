@@ -73,7 +73,7 @@ def validate_name(name_str):
     The user must add again the name until the input is good
     """
     if not name_str.isalpha(): # check if all characters are letters
-        print(f"You filled in: '{name_str}'.\n This is not valid. \n")
+        print(f"You filled in: '{name_str}'.\nThis is not valid. \n")
         print("Please enter only letters.")
         return False
     elif len(name_str) <= 1: # check if the entry is more than 1 character
@@ -89,10 +89,20 @@ def validate_name(name_str):
         return True
 
 
+def choose_flavor():
+    flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", "Speculoos", 
+    "Indian Mango", "Peanut Butter", "Very Cherry", "Passion fruit", "Piedmont hazelnut", 
+    "Salted butter caramel", "Rosemary lemon", "Basil apple"]
+
+    list_flavors = enumerate(flavors) # display the index number from list
+    [print(x) for x in list_flavors]
+
+
 def my_functions():
     """
     Calls different functions
     """
     enter_name()
+    choose_flavor()
 
 my_functions()
