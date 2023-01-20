@@ -89,13 +89,50 @@ def validate_name(name_str):
         return True
 
 
-def choose_flavor():
+def differents_flavors():
+    """
+    Display list of flavors with names and index
+    """
     flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", "Speculoos", 
     "Indian Mango", "Peanut Butter", "Very Cherry", "Passion fruit", "Piedmont hazelnut", 
     "Salted butter caramel", "Rosemary lemon", "Basil apple"]
 
     list_flavors = enumerate(flavors) # display the index number from list
-    [print(x) for x in list_flavors]
+    for flavor in list_flavors:
+        print(flavor)
+    #[print(x) for x in list_flavors]
+
+
+def choose_flavor():
+    """
+    Ask the client's flavor choice
+    If it is a number, convert into integer
+    And call the validate data function
+    """
+    print("Please select the choice of flavor:\n")
+    flavor_choice = input("Choose a number between 1 and 11:\n")
+
+    while True:
+        try:
+            flavor_number = int(flavor_choice) # Convert input into integer
+            print("It is a number that is cool. The programm goes to the validation")
+            validate_flavor(flavor_number)
+
+        except ValueError:
+            print("The choice is not a number. Pleaser enter the choice again.")
+            return False
+
+        return flavor_number
+
+
+def validate_flavor(flavor_number):
+    """
+    Check if the input number is on the list
+    """
+    if flavor_number <= 11:
+        print("The number is on the list, super !")
+    else:
+        return False
 
 
 def my_functions():
@@ -103,6 +140,7 @@ def my_functions():
     Calls different functions
     """
     enter_name()
+    differents_flavors()
     choose_flavor()
 
 my_functions()
