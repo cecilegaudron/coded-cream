@@ -21,33 +21,6 @@ SHEET = GSPREAD_CLIENT.open('coded-cream')
 
 ingredient = SHEET.worksheet('details')
 
-""" CODE WILL SEE AFTER
-def container_choice():
-    #Call the first column with the details and display choices for containers
-    print("What is the container ?")
-    container_details = ingredient.col_values(1)[1:] # get the container values
-    
-    # Assign a number to a cell value
-    container_num = []
-    for i in range(1, 4):
-        container_num.append(i)
-
-    container_convert = dict(zip(container_num, container_details))
-    print(container_convert)
-
-
-container_choice()
-
-
-def container_selection():
-   # Receive the selection of the container
-    #Input the client's choice
-    container_str = input("Enter the selection with a number between 1 and 3: ")
-    # check and valid the input
-    # save this choice in the spreadsheet
-
-container_selection()
-"""
 
 def enter_name():
     """
@@ -135,6 +108,45 @@ def validate_flavor(flavor_number):
         return False
 
 
+def suggestion_topping():
+    """
+    Propose adding a topping to the client
+    If yes, go to the toppings list
+    If not, continue the order
+    If incorrect entry, try again
+    """
+    print("Add a topping ? \n")
+    want_topping = input("Enter 'yes' to add a topping and 'n' to continue the order \n")
+
+    while True:
+        if want_topping == "y":
+            print("Choose the topping on the list")
+            differents_toppings() # Call function with topping list
+            break
+        
+        elif want_topping == "n":
+            print("No topping wanted, continue the order")
+            # Call next function
+            break
+        else:
+            print("Incorrect entry, please enter 'y' or 'n'")
+            return False
+
+
+def differents_toppings():
+    """
+    Display list of differents toppings
+    Enumerate name and index of toppings
+    """
+    toppings = ["Chocolate chips", "Marshmallows", "Rainbow sprinkles", "Chantilly cream", 
+    "Caramel"]
+
+    list_toppings = enumerate(toppings)
+
+    for topping in list_toppings:
+        print(topping)
+
+
 def my_functions():
     """
     Calls different functions
@@ -142,5 +154,6 @@ def my_functions():
     enter_name()
     differents_flavors()
     choose_flavor()
+    suggestion_topping()
 
 my_functions()
