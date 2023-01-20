@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import time
 
 """
 Declare creds, access to the google drive and excel document 
@@ -16,10 +17,10 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('coded-cream')
+#SHEET = GSPREAD_CLIENT.open('coded-cream')
 
 
-ingredient = SHEET.worksheet('details')
+#ingredient = SHEET.worksheet('details')
 
 
 def enter_name():
@@ -35,6 +36,8 @@ def enter_name():
             print("Thank you!")
             print(f"Order of '{name_str} 'is in progress.")
             break
+    
+    differents_flavors()
     
     return name_str
 
@@ -55,7 +58,7 @@ def validate_name(name_str):
         return False
     elif len(name_str) >= 10: # check if the entry is less than 10 characters
         print(f"You filled in: '{name_str}'. \n")
-        print("The name should be shorter than 10 character. \n")
+        print("The name should be shorter than 10 characters. \n")
         print("Please try again.")
         return False
     else:
@@ -71,9 +74,11 @@ def differents_flavors():
     "Salted butter caramel", "Rosemary lemon", "Basil apple"]
 
     list_flavors = enumerate(flavors) # display the index number from list
+
     for flavor in list_flavors:
         print(flavor)
-    #[print(x) for x in list_flavors]
+    
+    choose_flavor()
 
 
 def choose_flavor():
@@ -88,12 +93,13 @@ def choose_flavor():
     while True:
         try:
             flavor_number = int(flavor_choice) # Convert input into integer
-            print("It is a number that is cool. The programm goes to the validation")
-            validate_flavor(flavor_number)
+            if type(flavor_number) == int: # Check if the value is an integer
+                print("It is a number that is cool. The programm goes to the validation")
+                validate_flavor(flavor_number)
 
         except ValueError:
             print("The choice is not a number. Pleaser enter the choice again.")
-            return False
+            #return False
 
         return flavor_number
 
@@ -102,9 +108,11 @@ def validate_flavor(flavor_number):
     """
     Check if the input number is on the list
     """
-    if flavor_number <= 11:
+    if flavor_number <= 12:
         print("The number is on the list, super !")
+        suggestion_topping()
     else:
+        print("The choosen number is not on the list. Please try again.")
         return False
 
 
@@ -152,8 +160,5 @@ def my_functions():
     Calls different functions
     """
     enter_name()
-    differents_flavors()
-    choose_flavor()
-    suggestion_topping()
 
 my_functions()
