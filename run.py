@@ -64,15 +64,15 @@ def validate_name(name_str):
     else:
         return True
 
+# Define list of values with differents flavors
+flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", "Speculoos", 
+"Indian Mango", "Peanut Butter", "Very Cherry", "Passion fruit", "Piedmont hazelnut", 
+"Salted butter caramel", "Rosemary lemon", "Basil apple"]
 
 def differents_flavors():
     """
     Display list of flavors with names and index
     """
-    flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", "Speculoos", 
-    "Indian Mango", "Peanut Butter", "Very Cherry", "Passion fruit", "Piedmont hazelnut", 
-    "Salted butter caramel", "Rosemary lemon", "Basil apple"]
-
     list_flavors = enumerate(flavors) # display the index number from list
 
     for flavor in list_flavors:
@@ -109,7 +109,7 @@ def validate_flavor(flavor_number):
     Check if the input number is on the list
     """
     if flavor_number <= 12:
-        print("The number is on the list, super !")
+        print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
         suggestion_topping()
     else:
         print("The choosen number is not on the list. Please try again.")
