@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-import time
 
 """
 Declare creds, access to the google drive and excel document 
@@ -94,12 +93,11 @@ def choose_flavor():
         try:
             flavor_number = int(flavor_choice) # Convert input into integer
             if type(flavor_number) == int: # Check if the value is an integer
-                print("It is a number that is cool. The programm goes to the validation")
                 validate_flavor(flavor_number)
 
         except ValueError:
             print("The choice is not a number. Pleaser enter the choice again.")
-            #return False
+            return False
 
         return flavor_number
 
