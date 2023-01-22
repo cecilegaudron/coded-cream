@@ -124,17 +124,15 @@ def suggestion_topping():
     If incorrect entry, try again
     """
     print("Add a topping ? \n")
-    want_topping = input("Enter 'yes' to add a topping and 'n' to continue the order.\n")
+    want_topping = input("Enter 'y' to add one and 'n' to continue the order.\n")
 
     while True:
         if want_topping == "y":
-            print("Choose the topping on the list.\n")
+            print("Choose the topping on the list.")
             differents_toppings()  # Call function with topping list
-            break
-        
         elif want_topping == "n":
             print("No topping wanted, continue the order.\n")
-            # Call next function
+            recap_order()
             break
         else:
             print("Incorrect entry, please enter 'y' or 'n'.\n")
@@ -155,6 +153,30 @@ def differents_toppings():
 
     for topping in list_toppings:  # Display toppings with names and index
         print(topping)
+
+    topping_choice = int(input("Please select a topping by indicating its number:\n"))
+
+
+    while True:
+        try:
+            if type(topping_choice) == int and topping_choice <= 4:
+                print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
+                recap_order()
+                break
+            else:
+                print("The choosen number is not on the list. Please try again.\n")
+                return False
+        
+        except ValueError:
+            print("The choice is not a number. Pleaser enter the choice again.\n")
+            return False
+
+    return topping_choice
+
+
+def recap_order():
+    print(("The amount of the commande is to be calculated...\n"))
+    exit()
 
 
 def my_functions():
