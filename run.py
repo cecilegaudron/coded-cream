@@ -64,15 +64,15 @@ def validate_name(name_str):
 
 # Define list of values with differents flavors
 flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", 
- "Speculoos", "Indian Mango", "Peanut Butter", "Very Cherry", "Passion Fruit", 
- "Piedmont Hazelnut", "Salted Butter Caramel", "Rosemary Lemon", "Basil Apple"]
+"Speculoos", "Indian Mango", "Peanut Butter", "Very Cherry", "Passion Fruit", 
+"Piedmont Hazelnut", "Salted Butter Caramel", "Rosemary Lemon", "Basil Apple"]
 
 
 def differents_flavors():
     """
     Display list of flavors with names and index
     """
-    print("\nPlease select the choice of flavor:\n")
+    print("Please select the choice of flavor:")
     list_flavors = enumerate(flavors)  # Display the index number from list
 
     for flavor in list_flavors:
@@ -87,31 +87,33 @@ def choose_flavor():
     If it is a number, convert into integer
     And call the validate data function
     """
-    flavor_choice = input("Choose a number:\n")
+    flavor_choice = input("\nChoose a number:\n")
 
     while True:
         try:
             flavor_number = int(flavor_choice)  # Convert input into integer
             if type(flavor_number) == int:  # Check if the value is an integer
-                validate_flavor(flavor_number)
+                break
 
         except ValueError:
             print("The choice is not a number. Please enter the choice again.\n")
             return False
 
-        return flavor_number
+    validate_flavor(flavor_number)
+    
+    return flavor_number
 
 
 def validate_flavor(flavor_number):
     """
     Check if the input number is on the list
     """
-    if flavor_number <= 12:
-        print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
-        suggestion_topping()
-    else:
+    if flavor_number >= 12:
         print("The choosen number is not on the list. Please try again.\n")
         return False
+    else:
+        print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
+        suggestion_topping()
 
 
 def suggestion_topping():
@@ -141,7 +143,7 @@ def suggestion_topping():
 
 # Define list of values with differents toppings
 toppings = ["Chocolate chips", "Marshmallows", "Rainbow sprinkles", 
- "Chantilly cream", "Caramel"]
+"Chantilly cream", "Caramel"]
 
 
 def differents_toppings():
