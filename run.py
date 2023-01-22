@@ -130,7 +130,7 @@ def suggestion_topping():
             differents_toppings()  # Call function with topping list
         elif want_topping == "n":
             print("No topping wanted, continue the order.\n")
-            recap_order()
+            flavor_payment()
             break
         else:
             print("Incorrect entry, please enter 'y' or 'n'.\n")
@@ -159,7 +159,7 @@ def differents_toppings():
         try:
             if type(topping_choice) == int and topping_choice <= 4:
                 print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
-                recap_order()
+                topping_payment()
                 break
             else:
                 print("The choosen number is not on the list. Please try again.\n")
@@ -172,8 +172,20 @@ def differents_toppings():
     return topping_choice
 
 
-def recap_order():
-    print(("The amount of the commande is to be calculated...\n"))
+# Define flavor and topping prices
+flavor_price = 2
+topping_price = 1.5
+
+
+def flavor_payment():
+    print(f"The amount to be paid is {flavor_price}€.")
+    exit()
+
+
+def topping_payment():
+    calcul_price = float(flavor_price) + topping_price
+    print(f"A flavor is {flavor_price}€ and a topping is {topping_price}€.\n")
+    print(f"The amount to be paid is {calcul_price}€.")
     exit()
 
 
