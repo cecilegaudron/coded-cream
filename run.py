@@ -92,15 +92,12 @@ def choose_flavor():
     while True:
         try:
             flavor_number = int(flavor_choice)  # Convert input into integer
-            if validate_flavor(flavor_number):
-                print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
-                suggestion_topping()
+            if type(flavor_number) == int:  # Check if the value is an integer
+                validate_flavor(flavor_number)
 
         except ValueError:
             print("The choice is not a number. Please enter the choice again.\n")
             return False
-    
-    return flavor_number
 
 
 def validate_flavor(flavor_number):
@@ -108,10 +105,13 @@ def validate_flavor(flavor_number):
     Check if the input number is on the list
     """
     if flavor_number <= 12:
-        return True
+        print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
+        suggestion_topping()
     else:
-        raise IndexError("The choosen number is not on the list. Please try again.\n")
-        return False
+        print("The choosen number is not in the list. Please try again.\n")
+        choose_flavor()
+
+    return flavor_number
 
 
 def suggestion_topping():
