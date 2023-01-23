@@ -39,8 +39,7 @@ I would like, and this is the feature I am most interested in, to enter the valu
 Moreover, I would like to record the values of the order (the name of the chosen perfumes, the number of toppings, the choice of the booklet, the email address, the price to pay...) in the same excel document filled previously, but in another sheet. This will allow the store manager or the sales manager to make statistics, studies on the details of the store sales.
 
 - __Design__
-Finally, I am a visual person, I would like to propose a more graphic interface, "designed" order lines with different colors or sizes (if it is possible).
-
+Finally, I am a visual person, I would like to propose a more graphic interface.
 
 This is the first flowchart I had in mind :
 ![FIRST-FLOWCHART](/assets/images/flowchart-first.jpg)
@@ -50,23 +49,22 @@ This program is developed by the Python language.
 It uses GitPod, GitHub and Heroku.
 
 ### Frameworks and packages
-TO BE COMPLETED
+I install and import the Colorama module to have some colors in the code. I use this 
 
 ## Testing
+### Manual Testing
 I do a lot of manual testing to see if the program responded correctly to each situation.
-I tested my input with symbols, letters instead of numbers for the choice of ingredients, or numbers instead of letters for the name.
+I test my input with symbols, letters instead of numbers for the choice of ingredients, or numbers instead of letters for the name.
 For each type of error, I want an error message targeting exactly the error made so that the user could make a new action, this time correct.
 
 ### Validator Testing
-
+I use the [CI Python Linter](https://pep8ci.herokuapp.com/) to check my Python code.
 
 ## Deployment
 
 ### Gitpod
-TO BE COMPLETED
-
-### Setup API
-TO BE COMPLETED
+I use Gitpod for this project. I use the [CI python essentials template](https://github.com/Code-Institute-Org/python-essentials-template) proposed by Code Institute in order to take advantage of the parameters already installed and predefined for Python.
+I create a new repository of this template in order to save it in my workspace and to rename it. I then launched Gitpod from this new repository.
 
 ### Deployment on Heroku
 - Create a list of requirements, the program needs it to run
@@ -87,12 +85,12 @@ TO BE COMPLETED
 The site is live here : [Deployed Coded Cream project](https://coded-cream.herokuapp.com/)
 
 ## Credits
-TO BE COMPLETED
+I got ideas and good explanations with examples from : 
 
 - Love Sandwiches project
 - [W3schools](https://www.w3schools.com/)
 - [Universite Paris Diderot](https://python.sdv.univ-paris-diderot.fr/)
-- Sametmax2.com](https://sametmax2.com/)
+- [Sametmax2.com](https://sametmax2.com/)
 
 ### Acknowledgement
-TO BE COMPLETED
+I would like to thank my mentor Rory for all his precious advice, his help to better understand Python logic and his encouragement.

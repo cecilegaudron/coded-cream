@@ -1,22 +1,8 @@
-import gspread
-from google.oauth2.service_account import Credentials
+"""
+Import the Colorama module to have some colors
+on the code, especially for the inputs
+"""
 from colorama import Fore, Style
-
-"""
-Declare creds, access to the google drive and excel document
-Code from the Love Sandwiches project
-"""
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
 
 def enter_name():
