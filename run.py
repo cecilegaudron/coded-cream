@@ -143,21 +143,17 @@ def differents_toppings():
                                + Style.RESET_ALL))
 
     while True:
-        try:
             if type(topping_choice) == int and topping_choice <= 4:
                 print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
                 topping_payment()
                 break
+            elif type(topping_choice) is not int:
+                raise ValueError("The choice is not a number.\
+                                 Please enter the choice again.\n")
             else:
                 print("The choosen number is not on the list. \
-                Please try again.\n")
+                      Please try again.\n")
                 return False
-
-        except ValueError:
-            print("The choice is not a number. \
-            Pleaser enter the choice again.\n")
-            return False
-
     return topping_choice
 
 

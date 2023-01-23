@@ -63,8 +63,13 @@ For each type of error, I want an error message targeting exactly the error made
 ### Validator Testing
 I use the [CI Python Linter](https://pep8ci.herokuapp.com/) to check my Python code.
 
-## Deployment
+### Unfixed Bugs
+In the differents_toppings() function, I want to have an error message adapted to each situation. A message that a number should be filled in if the user fills in a letter or a symbol. And a message that a number in the list of toppings choices must be filled in if the user fills in a number greater than 4. 
+I have chosen to put a "try" and "except". The latter welcoming the "ValueError" with the message corresponding to the wrong type of data filled in. However, my two error sentences mentioned above are launched. So it is not correct and confusing for the user. 
+I remove the "try" and "except" by adding an "elif" with a "raise ValueError" with the corresponding message in my "if/else condition". 
+Now it works correctly but the user is not offered a new input, so he has to start the program again from the beginning. I haven't found a solution for these both problems. I choose to display the correct message according to the error encountered. This is less confusing for the user.
 
+## Deployment
 ### Gitpod
 I use Gitpod for this project. I use the [CI python essentials template](https://github.com/Code-Institute-Org/python-essentials-template) proposed by Code Institute in order to take advantage of the parameters already installed and predefined for Python.
 I create a new repository of this template in order to save it in my workspace and to rename it. I then launched Gitpod from this new repository.
