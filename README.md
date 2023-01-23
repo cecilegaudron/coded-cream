@@ -53,7 +53,12 @@ It uses GitPod, GitHub and Heroku.
 TO BE COMPLETED
 
 ## Testing
-TO BE COMPLETED
+I do a lot of manual testing to see if the program responded correctly to each situation.
+I tested my input with symbols, letters instead of numbers for the choice of ingredients, or numbers instead of letters for the name.
+For each type of error, I want an error message targeting exactly the error made so that the user could make a new action, this time correct.
+
+### Validator Testing
+
 
 ## Deployment
 
@@ -64,7 +69,7 @@ TO BE COMPLETED
 TO BE COMPLETED
 
 ### Deployment on Heroku
--Create a list of requirements, the program needs it to run
+- Create a list of requirements, the program needs it to run
 - Go to requirements.txt and enter on the terminal : pip3 freeze > requirements.txt
 - Save and push the code on Github
 - We need an account on Heroku. It is possible to create a free account.
