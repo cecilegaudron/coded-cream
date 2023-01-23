@@ -178,11 +178,19 @@ topping_price = 1.5
 
 
 def flavor_payment():
+    """
+    Print the amount to be paid when just a flavor is ordered
+    """
     print(f"The amount to be paid is {flavor_price}€.")
     exit()
 
 
 def topping_payment():
+    """
+    Calculate the price with addition between flavor price and topping price
+    Convert the flavor price into float number
+    Print the amount to be paid
+    """
     calcul_price = float(flavor_price) + topping_price
     print(f"A flavor is {flavor_price}€ and a topping is {topping_price}€.\n")
     print(f"The amount to be paid is {calcul_price}€.")

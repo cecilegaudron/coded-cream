@@ -2,7 +2,7 @@
 Coded Cream is a program for an ice cream store. Salesmen can fill in the details of the order. Salesmen have just to follow the steps to fill in the details of the order.
 
 ## Flowchart
-![FLOWCHART](/assets/images/flowchart.jpg)
+![FLOWCHART](/assets/images/flowchart.png)
 
 ## Features
 I often go and look at Code Institute students' posts on LinkedIn to see their projects. This allows me to glean ideas and especially to better understand what to expect from a project on Python. It also allows me to start thinking about the project I would like to propose before I completely finish the lessons of the module.
@@ -43,7 +43,7 @@ Finally, I am a visual person, I would like to propose a more graphic interface,
 
 
 This is the first flowchart I had in mind :
-![FIRST-FLOWCHART](/assets/images/flowchart.jpg)
+![FIRST-FLOWCHART](/assets/images/flowchart-first.jpg)
 
 ## Technology
 This program is developed by the Python language.
