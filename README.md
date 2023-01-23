@@ -23,6 +23,9 @@ The flow of the Coded Cream program is as follows:
 - The choice must be made by indicating the corresponding number
 - The price for an ice cream flavor and a topping is displayed
 
+- __Global and Mutables Variables__
+I know that using Global Variables is not a good practice. I just want to use local, global and mutable variables for this project to experiment with the different possibilities. 
+
 ### Features Left to Implement
 I have many ideas for this project. First, I need to practice Python a few more weeks, to better understand the logic, in order to realize them.
 

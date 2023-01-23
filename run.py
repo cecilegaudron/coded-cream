@@ -139,8 +139,8 @@ def differents_toppings():
     for topping in list_toppings:  # Display toppings with names and index
         print(topping)
 
-    topping_choice = int(input(Fore.BLUE + "Please add a topping \
-    by indicating its number:\n" + Style.RESET_ALL))
+    topping_choice = int(input(Fore.BLUE + "Enter the topping number:\n"
+                               + Style.RESET_ALL))
 
     while True:
         try:
@@ -162,15 +162,14 @@ def differents_toppings():
 
 
 # Define flavor and topping prices
-flavor_price = 2
-topping_price = 1.5
+_PRICES = [2, 1.5]
 
 
 def flavor_payment():
     """
     Print the amount to be paid when just a flavor is ordered
     """
-    print(f"The amount to be paid is {flavor_price}€.")
+    print(f"The order is a flavor. The amount to be paid is {_PRICES[0]}€.")
     exit()
 
 
@@ -180,8 +179,8 @@ def topping_payment():
     Convert the flavor price into float number
     Print the amount to be paid
     """
-    calcul_price = float(flavor_price) + topping_price
-    print(f"A flavor is {flavor_price}€ and a topping is {topping_price}€.\n")
+    calcul_price = float(_PRICES[0]) + _PRICES[1]
+    print(f"A flavor is {_PRICES[0]}€ and a topping is {_PRICES[1]}€.\n")
     print(f"The amount to be paid is {calcul_price}€.")
     exit()
 
