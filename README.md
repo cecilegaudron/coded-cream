@@ -1,5 +1,6 @@
 # CODED CREAM
 Coded Cream is a program for an ice cream store. Salesmen can fill in the details of the order. Salesmen have just to follow the steps to fill in the details of the order.
+![RUN PROGRAM](/assets/images/run-program.png)
 
 ## Flowchart
 ![FLOWCHART](/assets/images/flowchart.png)
@@ -65,6 +66,9 @@ I use the [CI Python Linter](https://pep8ci.herokuapp.com/) to check my Python c
 
 ### Unfixed Bugs
 In the differents_toppings() function, I want to have an error message adapted to each situation. A message that a number should be filled in if the user fills in a letter or a symbol. And a message that a number in the list of toppings choices must be filled in if the user fills in a number greater than 4. 
+
+![BUG](/assets/images/bug.png)
+
 I have chosen to put a "try" and "except". The latter welcoming the "ValueError" with the message corresponding to the wrong type of data filled in. However, my two error sentences mentioned above are launched. So it is not correct and confusing for the user. 
 I remove the "try" and "except" by adding an "elif" with a "raise ValueError" with the corresponding message in my "if/else condition". 
 Now it works correctly but the user is not offered a new input, so he has to start the program again from the beginning. I haven't found a solution for these both problems. I choose to display the correct message according to the error encountered. This is less confusing for the user.
