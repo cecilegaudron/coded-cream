@@ -11,8 +11,8 @@ def enter_name():
     If the entry is correct, the user can go to the next step
     """
     while True:
-        name_str = input(Fore.BLUE + "\nEnter the name of the client: \n" \
-            + Style.RESET_ALL)
+        name_str = input(Fore.BLUE + "\nEnter the name of the client: \n"
+                         + Style.RESET_ALL)
 
         if validate_name(name_str):
             print("Thank you!")
@@ -48,10 +48,10 @@ def validate_name(name_str):
 
 
 # Define list of values with differents flavors
-flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio", \
-    "Speculoos", "Indian Mango", "Peanut Butter", "Very Cherry", \
-        "Passion Fruit", "Piedmont Hazelnut", "Salted Butter Caramel",\
-             "Rosemary Lemon", "Basil Apple"]
+flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio",
+           "Speculoos", "Indian Mango", "Peanut Butter", "Very Cherry",
+           "Passion Fruit", "Piedmont Hazelnut", "Salted Butter Caramel",
+           "Rosemary Lemon", "Basil Apple"]
 
 
 def differents_flavors():
@@ -125,8 +125,8 @@ def suggestion_topping():
 
 
 # Define list of values with differents toppings
-toppings = ["Chocolate chips", "Marshmallows", "Rainbow sprinkles", \
-    "Chantilly cream", "Caramel"]
+toppings = ["Chocolate chips", "Marshmallows", "Rainbow sprinkles",
+            "Chantilly cream", "Caramel"]
 
 
 def differents_toppings():
@@ -139,8 +139,8 @@ def differents_toppings():
     for topping in list_toppings:  # Display toppings with names and index
         print(topping)
 
-    topping_choice = int(input(Fore.BLUE + "Please add a topping by indicating \
-        its number:\n" + Style.RESET_ALL))
+    topping_choice = int(input(Fore.BLUE + "Please add a topping \
+    by indicating its number:\n" + Style.RESET_ALL))
 
     while True:
         try:
@@ -149,11 +149,13 @@ def differents_toppings():
                 topping_payment()
                 break
             else:
-                print("The choosen number is not on the list. Please try again.\n")
+                print("The choosen number is not on the list. \
+                Please try again.\n")
                 return False
 
         except ValueError:
-            print("The choice is not a number. Pleaser enter the choice again.\n")
+            print("The choice is not a number. \
+            Pleaser enter the choice again.\n")
             return False
 
     return topping_choice
@@ -184,8 +186,8 @@ def topping_payment():
     exit()
 
 
-print(Fore.GREEN + "WELCOME TO THE CODED CREAM PROGRAMM!" \
-    + Style.RESET_ALL)
+print(Fore.GREEN + "WELCOME TO THE CODED CREAM PROGRAMM!"
+      + Style.RESET_ALL)
 
 # Start running the programm with the first function
 enter_name()
