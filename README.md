@@ -1,5 +1,6 @@
 # CODED CREAM
 Coded Cream is a program for an ice cream store. Salesmen can fill in the details of the order. Salesmen have just to follow the steps to fill in the details of the order.
+
 ![RUN PROGRAM](/assets/images/run-program.png)
 
 ## Flowchart
@@ -7,25 +8,32 @@ Coded Cream is a program for an ice cream store. Salesmen can fill in the detail
 
 ## Features
 I often go and look at Code Institute students' posts on LinkedIn to see their projects. This allows me to glean ideas and especially to better understand what to expect from a project on Python. It also allows me to start thinking about the project I would like to propose before I completely finish the lessons of the module.
-I was impressed with the [My Sub My Way](https://github.com/shahid129/my-sub-my-way) from "shadid129". I really liked this idea of offering a program that can record a command and still be relatively easy to use.
-Moreover, the My Sub My Way project had a similar aspect with the Love Sandwiches project which was the fact of calling values stored in an Excel document and then recording the values filled in by the user. 
-So I came up with a program that could be offered to salespeople in an ice cream store. I was largely inspired by my own experience as a customer in the fabulous Berlin ice cream store Hockey Pockey. There are different options available, apart from simply choosing the ice cream flavor. The price to pay is just an addition of the different options chosen by the customer (type of cone, number of flavors chosen, addition of one or more toppings).
+I am impressed with the [My Sub My Way](https://github.com/shahid129/my-sub-my-way) from "shadid129". I really like this idea of offering a program that can record a command and still be relatively easy to use.
+Moreover, the My Sub My Way project has a similar aspect with the Love Sandwiches project which is the fact of calling values stored in an Excel document and then recording the values filled in by the user. 
+So I come up with a program that can offer to salesmen in an ice cream store. I am largely inspired by my own experience as a customer in the fabulous Berlin ice cream store Hockey Pockey. There are different options available, apart from simply choosing the ice cream flavor. The price to pay is just an addition of the different options chosen by the customer (type of cone, number of flavors chosen, addition of one or more toppings).
 
-However, my practice of Python is not yet up to my expectations. So I had to scale down my project and build something simpler. The "number 1" project that I had in mind at the beginning of my reflection will wait a little bit before seeing the day.
+However, my practice of Python is not yet up to my expectations. So I have to scale down my project and build something simpler. The "number 1" project that I have in mind at the beginning of my reflection will wait a little bit before seeing the day.
 
 ### Existing Features
 The flow of the Coded Cream program is as follows: 
 - The name of the customer is requested
+- Validation of the entry
 - A list of ice cream flavors is displayed
-- The customer is asked to fill in the chosen flavor by indicating the corresponding number
-- The customer is asked to say whether or not he/she would like to add a topping
+- Salesmen fill in the choosen flavor by indicating the corresponding number
+- Validation of the entry
+- Salesmen ask to the customer to say whether or not he/she would like to add a topping
 - If the answer is no, the program goes directly to the calculation of the price to pay
 - If the customer wants a topping, a list of different choices is displayed
+- Vallidation of the entry
 - The choice must be made by indicating the corresponding number
+- Validation of the entry
 - The price for an ice cream flavor and a topping is displayed
 
 - __Global and Mutables Variables__
 I know that using Global Variables is not a good practice. I just want to use local, global and mutable variables for this project to experiment with the different possibilities. 
+
+- __Differents structures__
+I choose to build differently my two parts of the code where the user has to choose a flavor and then a topping. For a real project, I would have chosen to build these two parts in a more or less identical way, keeping the same structure. Nevertheless for this project, I choose to multiply the structures in order to discover several ways of doing things. 
 
 ### Features Left to Implement
 I have many ideas for this project. First, I need to practice Python a few more weeks, to better understand the logic, in order to realize them.
@@ -34,16 +42,16 @@ I have many ideas for this project. First, I need to practice Python a few more 
 First of all, I would like to be able to offer several selections of flavors and toppings. That the customer can order two or three flavors of ice cream and up to two toppings.
 
 - __Discount condition__
-I would like to offer a discount depending on whether the customer is a member of the loyalty program. If they are, a 15% discount will apply. If not, the customer has to fill in his email address in order to be subscribed to the newsletter and registered to the loyalty program.
+I would like to offer a discount depending on whether the customer is a member of the loyalty program. If the customer is, a 15% discount will apply. If not, the customer has to fill in his email address in order to be subscribed to the newsletter and registered to the loyalty program.
 
 - __Call data from Excel Document__
-I would like, and this is the feature I am most interested in, to enter the values of the perfume choices, toppings and prices in an excel document. That way, if the fragrances change or the prices fluctuate, the store staff can update this information directly, without my help and without having to "enter the code". This could give them real autonomy.
+I would like, and this is the feature I am most interested in, to enter the values of the flavor choices, toppings and prices in an excel document. That way, if the flavors change or the prices fluctuate, the store staff can update this information directly, without my help and without having to "tweak the code". This could give them real autonomy.
 
 - __Sava data order to Excel Document__
-Moreover, I would like to record the values of the order (the name of the chosen perfumes, the number of toppings, the choice of the booklet, the email address, the price to pay...) in the same excel document filled previously, but in another sheet. This will allow the store manager or the sales manager to make statistics, studies on the details of the store sales.
+Moreover, I would like to record the values of the order (the name of the chosen flavors, the number of toppings, the email address, the price to pay...) in the same excel document filled previously, but in another sheet. This will allow the store manager or the sales manager to make statistics, studies on the details of the store sales.
 
 - __Design__
-Finally, I am a visual person, I would like to propose a more graphic interface.
+Finally, as I am a visual person, I would like to propose a graphic interface.
 
 This is the first flowchart I had in mind :
 ![FIRST-FLOWCHART](/assets/images/flowchart-first.jpg)
@@ -53,9 +61,19 @@ This program is developed by the Python language.
 It uses GitPod, GitHub and Heroku.
 
 ### Frameworks and packages
-I install and import the Colorama module to have some colors in the code. I use this 
+I install and import the Colorama module to have some colors in the code.
 
 ## Testing
+| Problems                                                       | Actions                                                                 | Results                                                                                                                   |   |   |   |   |   |   |   |
+|----------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---|---|---|---|---|---|---|
+| ValueError                                                     | Add a try and except                                                    | If something with the wrong type is added, a sentence with explications is display                                        |   |   |   |   |   |   |   |
+| IndexError                                                     | Change the structure and remplace by a else statement                   | The IndexError disappeared                                                                                                |   |   |   |   |   |   |   |
+| Infinite loop in validate_flavor function when number too big  | Add a return False but it is not working or I use it in the wrong way. So I use a function call to come back to the first action with the flavor choice. I think it is not the good practice  | The Infinite loop is not running again, when the user adds a number too big, the program asks again for the flavor choice |   |   |   |   |   |   |   |
+| "ModuleNotFoundError: No module named" on the deployed program | I install again the module, it was already done but I forgot to add the command "pip3 freeze > requirements.txt" to save the librairie                    | The error is gone on the deployed program and the user's inputs are green                                                 |   |   |   |   |   |   |   |
+|                                                                |                                                                         |      
+
+
+
 ### Manual Testing
 I do a lot of manual testing to see if the program responded correctly to each situation.
 I test my input with symbols, letters instead of numbers for the choice of ingredients, or numbers instead of letters for the name.
@@ -64,19 +82,27 @@ For each type of error, I want an error message targeting exactly the error made
 ### Validator Testing
 I use the [CI Python Linter](https://pep8ci.herokuapp.com/) to check my Python code.
 
+![PYTHON LINTER](/assets/images/python-linter.png)
+
 ### Unfixed Bugs
-In the differents_toppings() function, I want to have an error message adapted to each situation. A message that a number should be filled in if the user fills in a letter or a symbol. And a message that a number in the list of toppings choices must be filled in if the user fills in a number greater than 4. 
+- __Both error messages__
+In the differents_toppings() function, I want to have an error message adapted to each situation. A message that a number should be filled in if the user fills in a letter or a symbol. And a message that a number in the list of toppings choice must be filled in if the user fills in a number greater than 4. 
 
 ![BUG](/assets/images/bug.png)
 
-I have chosen to put a "try" and "except". The latter welcoming the "ValueError" with the message corresponding to the wrong type of data filled in. However, my two error sentences mentioned above are launched. So it is not correct and confusing for the user. 
+I choose to put a "try" and "except". The latter welcoming the "ValueError" with the message corresponding to the wrong type of data filled in. However, my two error sentences mentioned above are launched. So it is not correct and confusing for the user. 
 I remove the "try" and "except" by adding an "elif" with a "raise ValueError" with the corresponding message in my "if/else condition". 
-Now it works correctly but the user is not offered a new input, so he has to start the program again from the beginning. I haven't found a solution for these both problems. I choose to display the correct message according to the error encountered. This is less confusing for the user.
+Now it works correctly but the user is not offered a new input, so he has to start the program again from the beginning. I haven't found a solution for these both problems. I choose to display the correct message according to the error encountered. This is less confusing for the user but it is not perfect.
+
+- __New entry not suggest again__
+When the user enters a wrong character (letter or symbol) for the choice of the flavor, the program does not suggest a new entry. I try several things but I could not solve this problem.
+
+![UNFIXED ERROR](/assets/images/unfixed-bug.png)
 
 ## Deployment
 ### Gitpod
 I use Gitpod for this project. I use the [CI python essentials template](https://github.com/Code-Institute-Org/python-essentials-template) proposed by Code Institute in order to take advantage of the parameters already installed and predefined for Python.
-I create a new repository of this template in order to save it in my workspace and to rename it. I then launched Gitpod from this new repository.
+I create a new repository of this template in order to save it in my workspace and to rename it. I launch Gitpod from this new repository.
 
 ### Deployment on Heroku
 - Create a list of requirements, the program needs it to run
@@ -105,4 +131,4 @@ I got ideas and good explanations with examples from :
 - [Sametmax2.com](https://sametmax2.com/)
 
 ### Acknowledgement
-I would like to thank my mentor Rory for all his precious advice, his help to better understand Python logic and his encouragement.
+I would like to thank my mentor Rory for all his precious advice, his help to better understand Python logic and his encouragement. And I would like to thank from the bottom of my heart my man, Stephane, who always has a word of encouragement and good vibes in the moments when I lose confidence in myself.
