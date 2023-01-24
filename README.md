@@ -131,4 +131,4 @@ I got ideas and good explanations with examples from :
 - [Sametmax2.com](https://sametmax2.com/)
 
 ### Acknowledgement
-I would like to thank my mentor Rory for all his precious advice, his help to better understand Python logic and his encouragement. And I would like to thank from the bottom of my heart my man, Stephane, who always has a word of encouragement and good vibes in the moments when I lose confidence in myself.
+I would like to thank my mentor Rory for all his precious advices, his help to better understand Python logic and his encouragement. And I would like to thank from the bottom of my heart my man, Stephane, who always has a word of encouragement and good vibes in the moments when I lose confidence in myself.
