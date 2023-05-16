@@ -71,7 +71,7 @@ def choose_flavor(flavor_number):
             flavor_number = int(flavor_number)
             if type(flavor_number) == int:  # Check if the value is an integer
                 if flavor_number >= 12:  # Check if the entry is more than 1 character
-                    print(f"You filled in: '{flavor_number}'. \n")
+                    print(f"You filled in: '{flavor_number}'.")
                     print("The chosen number is not in the list.\nPlease try again.")
                     continue
                 else:
@@ -79,7 +79,7 @@ def choose_flavor(flavor_number):
                     suggestion_topping()
                     break
         except ValueError:
-            print(f"You filled in: '{flavor_number}'. \n")
+            print(f"You filled in: '{flavor_number}'.")
             print("It is not a number.\nPlease try again.")
             continue
         break
@@ -94,11 +94,13 @@ def suggestion_topping():
     If not, continue the order
     If incorrect entry, try again
     """
-    print("Add a topping ? \n")
-    want_topping = input(Fore.BLUE + "Enter 'y' to add one topping \n \
-    Enter 'n' to finish the order.\n" + Style.RESET_ALL)
+    print("Add a topping ?")
+    print("Enter 'y' for add one and 'n' for no and go to payment.")
+    #want_topping = input(Fore.BLUE + "Enter 'y' to add one topping \n \
+    #Enter 'n' to finish the order.\n" + Style.RESET_ALL)
 
     while True:
+        want_topping = input(Fore.BLUE + "Enter 'y' or 'n':\n" + Style.RESET_ALL)
         if want_topping == "y":
             print("Choose the topping on the list.")
             differents_toppings()  # Call function with topping list
@@ -107,9 +109,10 @@ def suggestion_topping():
             flavor_payment()
             break
         else:
-            print("Incorrect entry.\n \
-                Please enter 'y'for 'yes' or 'n' for 'no'.")
-            return False
+            print(f"You filled in: '{want_topping}'.")
+            print("Incorrect entry.\nPlease try again.")
+            continue
+        break
 
 
 # Define list of values with differents toppings
