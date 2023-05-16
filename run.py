@@ -31,17 +31,16 @@ def validate_name(name_str):
     The user must add again the name until the input is good
     """
     if not name_str.isalpha():  # Check if all characters are letters
-        print(f"You filled in: '{name_str}'.\nThis is not valid. \n")
-        print("Please enter only letters.")
+        print(f"You filled in: '{name_str}'.")
+        print("This is not valid.\nPlease enter only letters.")
         return False
     elif len(name_str) <= 1:  # Check if the entry is more than 1 character
-        print(f"You filled in: '{name_str}'. \n")
+        print(f"You filled in: '{name_str}'.")
         print("The name should be longer than 1 character.\nPlease try again.")
         return False
     elif len(name_str) >= 10:  # check if the entry is less than 10 characters
-        print(f"You filled in: '{name_str}'. \n")
-        print("The name should be shorter than 10 characters. \n")
-        print("Please try again.")
+        print(f"You filled in: '{name_str}'.")
+        print("The name should be shorter than 10 characters.\nPlease try again.")
         return False
     else:
         return True
@@ -53,26 +52,12 @@ flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio",
            "Passion Fruit", "Piedmont Hazelnut", "Salted Butter Caramel",
            "Rosemary Lemon", "Basil Apple"]
 
-"""
-def differents_flavors():
- 
-    Display list of flavors with names and index
-
-    print("Please select the choice of flavor:")
-    list_flavors = enumerate(flavors)  # Display the index number from list
-
-    for flavor in list_flavors:
-        print(flavor)
-
-    choose_flavor()
-"""
 
 def choose_flavor(flavor_number):
     """
-    NEW TRY
     Ask the client's flavor choice
     If it is a number, convert into integer
-    And call the validate data function
+    Check if the input number is on the list
     """
     print("Please select the choice of flavor:")
     list_flavors = enumerate(flavors)  # Display the index number from list
@@ -94,67 +79,12 @@ def choose_flavor(flavor_number):
                     suggestion_topping()
                     break
         except ValueError:
+            print(f"You filled in: '{flavor_number}'. \n")
             print("It is not a number.\nPlease try again.")
             continue
         break
 
     return flavor_number
-
-
-
-"""
-def validate_flavor(flavor_number):
-
-    NEW TRY
-
-    try:
-        # flavor_number = int(flavor_number)  # Convert input into integer
-        if type(flavor_number) == int:  # Check if the value is an integer
-            if flavor_number >= 12:  # Check if the entry is more than 1 character
-                print(f"You filled in: '{flavor_number}'. \n")
-                print("The chosen number is not in the list.\nPlease try again.")
-                return False
-            else:
-                return True
-    except ValueError:
-        print("It is not a number. Please enter the choice again.\n")
-        return False
-"""
-
-"""
-def choose_flavor():
-
-    Ask the client's flavor choice
-    If it is a number, convert into integer
-    And call the validate data function
-
-    flavor_choice = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
-
-    while True:
-        try:
-            flavor_number = int(flavor_choice)  # Convert input into integer
-            if type(flavor_number) == int:  # Check if the value is an integer
-                validate_flavor(flavor_number)
-
-        except ValueError:
-            print("It is not a number. Please enter the choice again.\n")
-            return False
-"""
-
-"""
-def validate_flavor(flavor_number):
-
-    Check if the input number is on the list
-
-    if flavor_number <= 12:
-        print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
-        suggestion_topping()
-    else:
-        print("The choosen number is not in the list. Please try again.\n")
-        choose_flavor()
-
-    return flavor_number
-"""
 
 
 def suggestion_topping():
@@ -173,11 +103,12 @@ def suggestion_topping():
             print("Choose the topping on the list.")
             differents_toppings()  # Call function with topping list
         elif want_topping == "n":
-            print("No topping wanted, continue the order.\n")
+            print("No topping wanted, go to payment.")
             flavor_payment()
             break
         else:
-            print("Incorrect entry, please enter 'y' or 'n'.\n")
+            print("Incorrect entry.\n \
+                Please enter 'y'for 'yes' or 'n' for 'no'.")
             return False
 
 
