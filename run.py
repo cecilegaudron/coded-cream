@@ -19,7 +19,7 @@ def enter_name():
             print(f"Order of '{name_str}' is in progress.\n")
             break
 
-    differents_flavors()
+    choose_flavor(flavors)
 
     return name_str
 
@@ -53,11 +53,11 @@ flavors = ["Belgium Chocolate", "Madagascar Vanilla", "Sicilian Pistachio",
            "Passion Fruit", "Piedmont Hazelnut", "Salted Butter Caramel",
            "Rosemary Lemon", "Basil Apple"]
 
-
+"""
 def differents_flavors():
-    """
+ 
     Display list of flavors with names and index
-    """
+
     print("Please select the choice of flavor:")
     list_flavors = enumerate(flavors)  # Display the index number from list
 
@@ -65,14 +65,58 @@ def differents_flavors():
         print(flavor)
 
     choose_flavor()
+"""
 
-
-def choose_flavor():
+def choose_flavor(flavor_number):
     """
+    NEW TRY
     Ask the client's flavor choice
     If it is a number, convert into integer
     And call the validate data function
     """
+    print("Please select the choice of flavor:")
+    list_flavors = enumerate(flavors)  # Display the index number from list
+
+    for flavor in list_flavors:
+        print(flavor)
+    
+    while True:
+        flavor_number = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
+
+        if validate_flavor(flavor_number):
+            print(f"You choose '{flavors[flavor_number]}'. Good choice!\n")
+            break
+
+    suggestion_topping()
+
+    return flavor_number
+
+
+def validate_flavor(flavor_number):
+    """
+    NEW TRY
+    """
+    try:
+        flavor_number = int(flavor_number)  # Convert input into integer
+        if type(flavor_number) == int:  # Check if the value is an integer
+            if flavor_number >= 12:  # Check if the entry is more than 1 character
+                print(f"You filled in: '{flavor_number}'. \n")
+                print("The chosen number is not in the list.\nPlease try again.")
+                return False
+            else:
+                return True
+    except ValueError:
+        print("It is not a number. Please enter the choice again.\n")
+        return False
+
+
+"""
+def choose_flavor():
+
+    Ask the client's flavor choice
+    If it is a number, convert into integer
+    And call the validate data function
+
     flavor_choice = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
 
     while True:
@@ -84,12 +128,13 @@ def choose_flavor():
         except ValueError:
             print("It is not a number. Please enter the choice again.\n")
             return False
+"""
 
-
+"""
 def validate_flavor(flavor_number):
-    """
+
     Check if the input number is on the list
-    """
+
     if flavor_number <= 12:
         print(f"\nThe choice is: '{flavors[flavor_number]}'.\n")
         suggestion_topping()
@@ -98,6 +143,7 @@ def validate_flavor(flavor_number):
         choose_flavor()
 
     return flavor_number
+"""
 
 
 def suggestion_topping():
