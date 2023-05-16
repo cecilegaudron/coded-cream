@@ -79,25 +79,36 @@ def choose_flavor(flavor_number):
 
     for flavor in list_flavors:
         print(flavor)
-    
+
     while True:
-        flavor_number = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
-
-        if validate_flavor(flavor_number):
-            print(f"You choose '{flavors[flavor_number]}'. Good choice!\n")
-            break
-
-    suggestion_topping()
+        try:
+            flavor_number = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
+            flavor_number = int(flavor_number)
+            if type(flavor_number) == int:  # Check if the value is an integer
+                if flavor_number >= 12:  # Check if the entry is more than 1 character
+                    print(f"You filled in: '{flavor_number}'. \n")
+                    print("The chosen number is not in the list.\nPlease try again.")
+                    continue
+                else:
+                    print(f"You choose '{flavors[flavor_number]}'. Good choice!")
+                    suggestion_topping()
+                    break
+        except ValueError:
+            print("It is not a number.\nPlease try again.")
+            continue
+        break
 
     return flavor_number
 
 
+
+"""
 def validate_flavor(flavor_number):
-    """
+
     NEW TRY
-    """
+
     try:
-        flavor_number = int(flavor_number)  # Convert input into integer
+        # flavor_number = int(flavor_number)  # Convert input into integer
         if type(flavor_number) == int:  # Check if the value is an integer
             if flavor_number >= 12:  # Check if the entry is more than 1 character
                 print(f"You filled in: '{flavor_number}'. \n")
@@ -108,7 +119,7 @@ def validate_flavor(flavor_number):
     except ValueError:
         print("It is not a number. Please enter the choice again.\n")
         return False
-
+"""
 
 """
 def choose_flavor():
