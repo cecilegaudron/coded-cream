@@ -75,7 +75,7 @@ def choose_flavor(flavor_number):
                     print("The chosen number is not in the list.\nPlease try again.")
                     continue
                 else:
-                    print(f"You choose '{flavors[flavor_number]}'. Good choice!")
+                    print(f"You choose '{flavors[flavor_number]}'")
                     suggestion_topping()
                     break
         except ValueError:
@@ -102,7 +102,7 @@ def suggestion_topping():
     while True:
         want_topping = input(Fore.BLUE + "Enter 'y' or 'n':\n" + Style.RESET_ALL)
         if want_topping == "y":
-            print("Choose the topping on the list.")
+            print("You want a topping !")
             differents_toppings()  # Call function with topping list
         elif want_topping == "n":
             print("No topping wanted, go to payment.")
@@ -125,26 +125,29 @@ def differents_toppings():
     Display list of differents toppings
     Enumerate name and index of toppings
     """
+    print("Please select a topping in the list:")
     list_toppings = enumerate(toppings)
 
     for topping in list_toppings:  # Display toppings with names and index
         print(topping)
 
-    topping_choice = int(input(Fore.BLUE + "Enter the topping number:\n"
-                               + Style.RESET_ALL))
-
     while True:
-        if type(topping_choice) == int and topping_choice <= 4:
-            print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
-            topping_payment()
-            break
-        elif type(topping_choice) is not int:
-            raise ValueError("The choice is not a number.\
-                            Please enter the choice again.\n")
-        else:
-            print("The choosen number is not on the list. \
-                  Please try again.\n")
-            return False
+        try:
+            topping_choice = int(input(Fore.BLUE + "Enter the topping number:\n"
+                               + Style.RESET_ALL))
+            if type(topping_choice) == int and topping_choice <= 4:
+                print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
+                topping_payment()
+                break
+            else:
+                print(f"You filled in: '{topping_choice}'.")
+                print("The number is not on the list. Please try again.")
+                continue
+        except ValueError:
+            print("The choice is not a number. Please enter the choice again.")
+            continue
+        break
+
     return topping_choice
 
 
