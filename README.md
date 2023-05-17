@@ -9,10 +9,13 @@ Coded Cream is a program for an ice cream store. Salesmen can fill in the detail
 ## Features
 I often go and look at Code Institute students' posts on LinkedIn to see their projects. This allows me to glean ideas and especially to better understand what to expect from a project on Python. It also allows me to start thinking about the project I would like to propose before I completely finish the lessons of the module.
 I am impressed with the [My Sub My Way](https://github.com/shahid129/my-sub-my-way) from "shadid129". I really like this idea of offering a program that can record a command and still be relatively easy to use.
-Moreover, the My Sub My Way project has a similar aspect with the Love Sandwiches project which is the fact of calling values stored in an Excel document and then recording the values filled in by the user. 
+Moreover, the My Sub My Way project has a similar aspect with the Love Sandwiches project which is the fact of calling values stored in an Excel document and then recording the values filled in by the user.  
+
+![START THE PROGRAMME](/assets/images/start.png)
+
 So I come up with a program that can offer to salesmen in an ice cream store. I am largely inspired by my own experience as a customer in the fabulous Berlin ice cream store Hockey Pockey. There are different options available, apart from simply choosing the ice cream flavor. The price to pay is just an addition of the different options chosen by the customer (type of cone, number of flavors chosen, addition of one or more toppings).  
 
-![Order](/assets/images/complete-order.png)
+![ORDER](/assets/images/complete-order.png)
 
 However, my practice of Python is not yet up to my expectations. So I have to scale down my project and build something simpler. The "number 1" project that I have in mind at the beginning of my reflection will wait a little bit before seeing the day.
 
@@ -31,28 +34,28 @@ The flow of the Coded Cream program is as follows:
 - Validation of the entry
 - The price for an ice cream flavor and a topping is displayed
 
--__Global and Mutables Variables__
+-__Global and Mutables Variables__  
 I know that using Global Variables is not a good practice. I just want to use local, global and mutable variables for this project to experiment with the different possibilities. 
 
--__Differents structures__
+-__Differents structures__  
 I choose to build differently my two parts of the code where the user has to choose a flavor and then a topping. For a real project, I would have chosen to build these two parts in a more or less identical way, keeping the same structure. Nevertheless for this project, I choose to multiply the structures in order to discover several ways of doing things. 
 
-### Features Left to Implement
+### Features Left to Implement  
 I have many ideas for this project. First, I need to practice Python a few more weeks, to better understand the logic, in order to realize them.
 
--__Several Selections__
+-__Several Selections__  
 First of all, I would like to be able to offer several selections of flavors and toppings. That the customer can order two or three flavors of ice cream and up to two toppings.
 
--__Discount condition__
+-__Discount condition__  
 I would like to offer a discount depending on whether the customer is a member of the loyalty program. If the customer is, a 15% discount will apply. If not, the customer has to fill in his email address in order to be subscribed to the newsletter and registered to the loyalty program.
 
--__Call data from Excel Document__
+-__Call data from Excel Document__  
 I would like, and this is the feature I am most interested in, to enter the values of the flavor choices, toppings and prices in an excel document. That way, if the flavors change or the prices fluctuate, the store staff can update this information directly, without my help and without having to "tweak the code". This could give them real autonomy.
 
--__Sava data order to Excel Document__
+-__Sava data order to Excel Document__  
 Moreover, I would like to record the values of the order (the name of the chosen flavors, the number of toppings, the email address, the price to pay...) in the same excel document filled previously, but in another sheet. This will allow the store manager or the sales manager to make statistics, studies on the details of the store sales.
 
--__Design__
+-__Design__  
 Finally, as I am a visual person, I would like to propose a graphic interface.
 
 This is the first flowchart I had in mind :
@@ -112,6 +115,47 @@ I realize that I build my validations with two functions. When an erroneous numb
 So I need to combine the two functions into one. By wrapping the if/else function to validate if the number entered is correct in the try/except function which validates that the input is valid with a number.  
 It is important to keep the try/except because without this function I can't handle invalid inputs, such as letters or symbols. So I remove the "raise ValueError" that I initially integrate to the differents_toppings function and that is not working properly.  
 I build a little bit differently the functions choose_flavor and differents_toppings with the automatic conversion of the input to integer from the input and with a double validation if the input is indeed an integer and the number is less than or equal to 4.  
+
+### Testing  
+I use the [CI Python Linter](https://pep8ci.herokuapp.com/) to check my Python code. I had no code errors, only lines that were too long. So I made some line breaks and code adjustments in order to have lines of optimal length
+
+![PYTHON LINTER](/assets/images/python-linter-resubmission.png)
+
+### Manual Testing  
+I do some manual testing. I test all the possibilities that the user could do for each entry.  
+
+-__The choice of the name__
+- input of numbers instead of letters
+- input of a name greater than 10 letters
+- input of a single character
+- entry of a symbol, space
+- empty entry (just by typing "enter")  
+
+![NAME TESTING](/assets/images/testing-name.png)
+
+-__The choice of the flavor__
+- entry of letters instead of numbers
+- input of a number greater than 11
+- input of symbol, space
+- empty input (just by typing "enter")  
+
+![FLAVOR TESTING](/assets/images/testing-flavors.png)
+
+-__The choice to add or not a topping__
+-Entering numbers instead of letters
+- enter a letter other than "y" for yes and "n" for no
+- input of a symbol, a space
+- empty input (just by typing "enter")  
+
+![TOPPING MAYBE TESTING](/assets/images/testing-yes-no.png)
+
+-__The choice of the topping__
+- input of letters instead of numbers
+- input of a number greater than 4
+- entry of symbol, space
+- empty input (just by typing "enter")  
+
+![TOPPING TESTING](/assets/images/testing-toppings.png)
 
 ## Deployment
 ### Gitpod
