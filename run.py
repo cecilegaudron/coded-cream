@@ -15,8 +15,12 @@ def enter_name():
                          + Style.RESET_ALL)
 
         if validate_name(name_str):
-            print("Thank you!")
-            print(f"Order of '{name_str}' is in progress.\n")
+            print(
+                "Thank you!"
+                )
+            print(
+                f"Order of '{name_str}' is in progress.\n"
+                )
             break
 
     choose_flavor(flavors)
@@ -31,16 +35,28 @@ def validate_name(name_str):
     The user must add again the name until the input is good
     """
     if not name_str.isalpha():  # Check if all characters are letters
-        print(f"You filled in: '{name_str}'.")
-        print("This is not valid.\nPlease enter only letters.")
+        print(
+            f"You filled in: '{name_str}'."
+            )
+        print(
+            "This is not valid.\nPlease enter only letters.\n"
+            )
         return False
     elif len(name_str) <= 1:  # Check if the entry is more than 1 character
-        print(f"You filled in: '{name_str}'.")
-        print("The name should be longer than 1 character.\nPlease try again.")
+        print(
+            f"You filled in: '{name_str}'."
+            )
+        print(
+            "The name should be longer than 1 character.\nPlease try again.\n"
+            )
         return False
     elif len(name_str) >= 10:  # check if the entry is less than 10 characters
-        print(f"You filled in: '{name_str}'.")
-        print("The name should be shorter than 10 characters.\nPlease try again.")
+        print(
+            f"You filled in: '{name_str}'."
+            )
+        print(
+            "The name should be shorter than 10 characters.Please try again.\n"
+            )
         return False
     else:
         return True
@@ -67,20 +83,30 @@ def choose_flavor(flavor_number):
 
     while True:
         try:
-            flavor_number = input(Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL)
+            flavor_number = input(
+                Fore.BLUE + "\nChoose a number:\n" + Style.RESET_ALL
+                )
             flavor_number = int(flavor_number)
             if type(flavor_number) == int:  # Check if the value is an integer
-                if flavor_number >= 12:  # Check if the entry is more than 1 character
-                    print(f"You filled in: '{flavor_number}'.")
-                    print("The chosen number is not in the list.\nPlease try again.")
+                if flavor_number >= 12:
+                    print(
+                        f"You filled in: '{flavor_number}'."
+                        )
+                    print(
+                        "The number isn't in the list.Please try again.\n"
+                        )
                     continue
                 else:
-                    print(f"You choose '{flavors[flavor_number]}'")
+                    print(f"You choose '{flavors[flavor_number]}'\n")
                     suggestion_topping()
                     break
         except ValueError:
-            print(f"You filled in: '{flavor_number}'.")
-            print("It is not a number.\nPlease try again.")
+            print(
+                f"You filled in: '{flavor_number}'."
+                )
+            print(
+                "It is not a number.\nPlease try again.\n"
+                )
             continue
         break
 
@@ -94,23 +120,35 @@ def suggestion_topping():
     If not, continue the order
     If incorrect entry, try again
     """
-    print("Add a topping ?")
-    print("Enter 'y' for add one and 'n' for no and go to payment.")
-    #want_topping = input(Fore.BLUE + "Enter 'y' to add one topping \n \
-    #Enter 'n' to finish the order.\n" + Style.RESET_ALL)
+    print(
+        "Add a topping ?\n"
+        )
+    print(
+        "Enter 'y' for add one and 'n' for no and go to payment.\n"
+        )
 
     while True:
-        want_topping = input(Fore.BLUE + "Enter 'y' or 'n':\n" + Style.RESET_ALL)
+        want_topping = input(
+            Fore.BLUE + "Enter 'y' or 'n':\n" + Style.RESET_ALL
+            )
         if want_topping == "y":
-            print("You want a topping !")
+            print(
+                "You want a topping !"
+                )
             differents_toppings()  # Call function with topping list
         elif want_topping == "n":
-            print("No topping wanted, go to payment.")
+            print(
+                "No topping wanted, go to payment."
+                )
             flavor_payment()
             break
         else:
-            print(f"You filled in: '{want_topping}'.")
-            print("Incorrect entry.\nPlease try again.")
+            print(
+                f"You filled in: '{want_topping}'."
+                )
+            print(
+                "Incorrect entry.\nPlease try again.\n"
+                )
             continue
         break
 
@@ -125,7 +163,7 @@ def differents_toppings():
     Display list of differents toppings
     Enumerate name and index of toppings
     """
-    print("Please select a topping in the list:")
+    print("Please select a topping in the list:\n")
     list_toppings = enumerate(toppings)
 
     for topping in list_toppings:  # Display toppings with names and index
@@ -133,18 +171,28 @@ def differents_toppings():
 
     while True:
         try:
-            topping_choice = int(input(Fore.BLUE + "Enter the topping number:\n"
-                               + Style.RESET_ALL))
+            topping_choice = int(
+                input(Fore.BLUE + "Enter the topping number:\n"
+                      + Style.RESET_ALL)
+                               )
             if type(topping_choice) == int and topping_choice <= 4:
-                print(f"\nThe choice is: '{toppings[topping_choice]}'.\n")
+                print(
+                    f"\nThe choice is: '{toppings[topping_choice]}'.\n"
+                    )
                 topping_payment()
                 break
             else:
-                print(f"You filled in: '{topping_choice}'.")
-                print("The number is not on the list. Please try again.")
+                print(
+                    f"You filled in: '{topping_choice}'."
+                    )
+                print(
+                    "The number is not on the list. Please try again.\n"
+                )
                 continue
         except ValueError:
-            print("The choice is not a number. Please enter the choice again.")
+            print(
+                "The choice is not a number. Please enter the choice again.\n"
+                )
             continue
         break
 
@@ -159,7 +207,9 @@ def flavor_payment():
     """
     Print the amount to be paid when just a flavor is ordered
     """
-    print(f"The order is a flavor. The amount to be paid is {_PRICES[0]}€.")
+    print(
+        f"The order is a flavor. The amount to be paid is {_PRICES[0]}€.\n"
+        )
     exit()
 
 
@@ -170,8 +220,12 @@ def topping_payment():
     Print the amount to be paid
     """
     calcul_price = float(_PRICES[0]) + _PRICES[1]
-    print(f"A flavor is {_PRICES[0]}€ and a topping is {_PRICES[1]}€.\n")
-    print(f"The amount to be paid is {calcul_price}€.")
+    print(
+        f"A flavor is {_PRICES[0]}€ and a topping is {_PRICES[1]}€."
+        )
+    print(
+        f"The amount to be paid is {calcul_price}€.\n"
+        )
     exit()
 
 
