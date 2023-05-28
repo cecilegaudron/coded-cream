@@ -210,6 +210,9 @@ def flavor_payment():
     print(
         f"The order is a flavor. The amount to be paid is {_PRICES[0]}€.\n"
         )
+    print(
+        "Thank you for your order. See you soon!"
+        )
     exit()
 
 
@@ -225,6 +228,9 @@ def topping_payment():
         )
     print(
         f"The amount to be paid is {calcul_price}€.\n"
+        )
+    print(
+        "Thank you for your order. See you soon!"
         )
     exit()
 
